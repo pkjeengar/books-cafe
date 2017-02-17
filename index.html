@@ -1,6 +1,30 @@
 <html>
 	<head>
 		<title>books cart</title>
+		
+		<script>
+			function valid() {
+				var username=document.getElementById("uname").value;
+				var password=document.getElementById("pass").value;
+				if(username=="")
+				{
+					alert("please fill username");				
+					return false;
+				}
+				else if(password=="")
+				{
+					alert("please fill password");				
+					return false;
+				}
+				if(username=="admin" && password=="admin")
+				{
+					alert("login successfull");				
+					return true;
+				}
+				
+			}		
+		</script>
+		
 		<style>
 			.div1
 			{
@@ -17,13 +41,16 @@
 			{
 				text-align:center;
 				height:50px;
-				padding-left:420px;				
+				padding-left:420px;
+				
 				background-color: #993300;
+
 			}			
 			.menu
 			{
 				text-align:center;
-				height:50px;				
+				height:50px;
+				
 				margin-left:50px;
 				text-decoration: none;
 				color:#000;
@@ -31,23 +58,21 @@
 
 			}
 			.content
-			{				
-				height:500px;	
-			}
-			.content_image
 			{
-				float:left;
-				width:550px;				
-				margin-left:10px;
-				margin-top:20px;
+				background-color: #993300;
 			}
-			.content_text
-			{				
-				float:left;
-				width:700px;				
-				margin-top:20px;
+			.content1
+			{
+				
+				
+				margin-left:530px;
+				background-color: #993300;
 			}
-		
+			.container
+			{
+				width:240px;		
+				
+			}
 		</style>
 	</head>
 	<body bgcolor=#802b00>
@@ -61,12 +86,25 @@
 			</div>
 			</br>
 			<div class="content">
-				<div class="content_text">A book is a set of written, printed, illustrated, or blank sheets, made of paper, parchment, or other materials, fastened together to hinge at one side, with text and/or images printed in ink. A single sheet within a book is a leaf, and each side of a leaf is a page. A set of text-filled or illustrated pages produced in electronic format is known as an electronic book, or e-book.
+				<div class="content1">
+					    <form action="" method="post" onsubmit="return valid()">
+						    <div class="container">
+							    <label><b>Username:</b></label>
+							    	<input type="text" id="uname" placeholder="Enter Username" name="uname" ></br>
+							    	<label><b>Password  :</b></label>
+							    	<input type="password" id="pass" placeholder="Enter Password" name="psw" ></br>
+							    <button type="submit">Login</button>
+							    
+							    <input type="checkbox" checked="checked"> Remember me
+						  </div>
 
-</div>
-				<div class="content_image"><img src="/home/student/workspace/pradeep/images/finger-passes-along-bookgif.gif"></div>
-				
-			</div>		
+						 <div class="container" style="background-color:#f1f1f1;">
+							    <button type="button" class="cancelbtn">Cancel</button>
+							    <span class="psw">Forgot <a href="#">password?</a></span>
+						  </div>
+						</form>
+				</div>	
+			</div>	
 		</div>
 	</body>
 </html>
